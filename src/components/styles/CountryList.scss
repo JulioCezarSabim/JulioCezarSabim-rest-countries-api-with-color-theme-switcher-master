@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} // reset
+
+.countryList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 70px 0;
+} // countryList

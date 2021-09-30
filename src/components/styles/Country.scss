@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} // reset
+
+
+.country {
+    width: 265px;
+    font-family: 'Nunito Sans', sans-serif;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px 0 rgba(black, .7);
+
+    img {
+        width: 100%;
+        height: 160px;
+    } // img
+
+    .infos {
+        padding: 10px 30px 40px 30px;
+
+        h2 {
+            font-size: 14px;
+            font-weight: 800;
+        } // h2
+    
+        p {
+            font-size: 14px;
+    
+            span {
+                font-weight: 600;
+            } // span
+        } // p
+    } // .infos
+} // .country
