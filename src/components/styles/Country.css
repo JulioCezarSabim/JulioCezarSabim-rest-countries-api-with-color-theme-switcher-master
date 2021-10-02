@@ -10,8 +10,8 @@
   font-family: 'Nunito Sans', sans-serif;
   border-radius: 3px;
   overflow: hidden;
-  -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.7);
-          box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 .country img {
@@ -20,12 +20,13 @@
 }
 
 .country .infos {
-  padding: 10px 30px 40px 30px;
+  padding: 0 30px 20px 30px;
 }
 
 .country .infos h2 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
+  margin: 18px 0;
 }
 
 .country .infos p {

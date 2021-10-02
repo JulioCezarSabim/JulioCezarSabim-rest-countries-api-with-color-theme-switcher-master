@@ -10,7 +10,7 @@
     font-family: 'Nunito Sans', sans-serif;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 2px 15px 0 rgba(black, .7);
+    box-shadow: 0 5px 15px 0 rgba(black, .1);
 
     img {
         width: 100%;
@@ -18,11 +18,12 @@
     } // img
 
     .infos {
-        padding: 10px 30px 40px 30px;
+        padding: 0 30px 20px 30px;
 
         h2 {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 800;
+            margin: 18px 0;
         } // h2
     
         p {
