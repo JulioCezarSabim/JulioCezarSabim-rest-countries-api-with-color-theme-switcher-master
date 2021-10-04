@@ -17,4 +17,9 @@
           justify-content: space-between;
   gap: 70px;
 }
+
+.countryList .link {
+  text-decoration: none;
+  color: black;
+}
 /*# sourceMappingURL=CountryList.css.map */

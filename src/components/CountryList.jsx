@@ -20,7 +20,7 @@ const CountryList = props => {
     return (
         <div className="countryList">
             {country?.map(item => (
-                <Link to={item.alpha3Code} key={uuidv4()} >
+                <Link to={item.alpha3Code} key={uuidv4()} className="link" >
                     <Country data={item} />
                 </Link>
             ))}
