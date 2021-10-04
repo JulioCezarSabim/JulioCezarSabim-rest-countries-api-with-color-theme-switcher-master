@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import Country from './Country'
 import api from '../services/api'
@@ -18,9 +19,11 @@ const CountryList = props => {
 
     return (
         <div className="countryList">
-            { country?.map(item => (
-                <Country key={uuidv4()} data={item} />
-            )) }
+            {country?.map(item => (
+                <Link to={item.alpha3Code} >
+                    <Country data={item} key={uuidv4()} />
+                </Link>
+            ))}
         </div>
     )
 }
