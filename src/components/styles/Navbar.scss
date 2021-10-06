@@ -35,3 +35,20 @@ nav {
         } // li
     } // ul
 } // nav
+
+@media (max-width: 600px) {
+    nav {
+        padding: 0 25px;
+        
+        ul {
+
+            li {
+                font-size: 18px;
+
+                button {
+                    font-size: 12px;
+                } // button
+            } // li
+        } // ul
+    } // nav
+} // @media (max-width: 600px)

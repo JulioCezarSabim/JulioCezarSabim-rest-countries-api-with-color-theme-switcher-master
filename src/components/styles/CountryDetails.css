@@ -1,0 +1,62 @@
+.countryDetails {
+  padding: 0 25px 35px 25px;
+}
+
+.countryDetails .btn-back {
+  margin: 50px 0;
+}
+
+.countryDetails .btn-back,
+.countryDetails .btn-borders {
+  width: 110px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  font-size: 14px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.countryDetails .btn-back i,
+.countryDetails .btn-borders i {
+  margin: 0 15px 0 0;
+}
+
+.countryDetails .btn-borders {
+  margin: 5px 5px;
+  width: auto;
+  padding: 0 10px;
+}
+
+.countryDetails .img-flag {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.countryDetails .h1-name {
+  font-size: 22px;
+}
+
+.countryDetails .info-1,
+.countryDetails .info-2 {
+  margin: 40px 0;
+}
+
+.countryDetails p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.countryDetails p span {
+  font-weight: 600;
+}
+
+.countryDetails .borders .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=CountryDetails.css.map */
