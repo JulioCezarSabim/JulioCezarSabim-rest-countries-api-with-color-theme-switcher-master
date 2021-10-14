@@ -52,7 +52,9 @@ const CountryDetails = ({ match }) => {
                 <div className="btns">
                     {
                         details?.borders.map(country => {
-                            return <button className="btn-borders" key={country}>{ country }</button>
+                            return <Link to={country} key={country}>
+                                <button className="btn-borders">{ country }</button>
+                            </Link>
                         })
                     }
                 </div>
