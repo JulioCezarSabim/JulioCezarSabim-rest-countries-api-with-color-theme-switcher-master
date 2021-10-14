@@ -47,18 +47,26 @@ const CountryDetails = ({ match }) => {
                 }</p>
             </div>
 
-            <div className="borders">
-                <p><span>Border Countries: </span></p>
-                <div className="btns">
-                    {
-                        details?.borders.map(country => {
-                            return <Link to={country} key={country}>
-                                <button className="btn-borders">{ country }</button>
-                            </Link>
-                        })
-                    }
+            {
+                // If a country has borders with another country...
+                details?.borders && 
+
+                // ...then render this
+                <div className="borders">
+                    <p><span>Border Countries: </span></p>
+                    <div className="btns">
+                        {
+                            details?.borders.map(country => {
+                                return <Link to={country} key={country}>
+                                    <button className="btn-borders">{ country }</button>
+                                </Link>
+                            })
+                        }
+                    </div>
                 </div>
-            </div>
+            }
+
+            
         </div>
     )
 }
