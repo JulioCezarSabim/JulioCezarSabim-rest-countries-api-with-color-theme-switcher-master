@@ -21,52 +21,63 @@ const CountryDetails = ({ match }) => {
                 <button className="btn-back"><i className="fas fa-long-arrow-alt-left"></i>Back</button>
             </Link>
 
-            <img src={details?.flag} alt="Flag" className="img-flag" />
+            <div className="main-container">
 
-            <h1 className="h1-name">{ details?.name }</h1>
+                <div className="flag-container">
+                    <img src={details?.flag} alt="Flag" className="img-flag" />
+                </div>
 
-            <div className='info-1'>
-                <p><span>Native Name: </span>{ details?.nativeName }</p>
-                <p><span>Population: </span>{ details?.population }</p>
-                <p><span>Region: </span>{ details?.region }</p>
-                <p><span>Sub Region: </span>{ details?.subregion }</p>
-                <p><span>Capital: </span>{ details?.capital }</p>
-            </div>
+                <div className="info-container">
+                    <div className="first-line">
+                        <h1 className="h1-name">{details?.name}</h1>
+                    </div>
 
-            <div className="info-2">
-                <p><span>Top Level Domain: </span>{ details?.topLevelDomain }</p>
-                <p><span>Currencies: </span>{
-                    details?.currencies.map(item => {
-                        return item.name
-                    }).join(', ')
-                }</p>
-                <p><span>Languages: </span>{
-                    details?.languages.map(item => {
-                        return item.name
-                    }).join(', ')
-                }</p>
-            </div>
+                    <div className="second-line">
+                        <div className='info-1'>
+                            <p><span>Native Name: </span>{details?.nativeName}</p>
+                            <p><span>Population: </span>{details?.population}</p>
+                            <p><span>Region: </span>{details?.region}</p>
+                            <p><span>Sub Region: </span>{details?.subregion}</p>
+                            <p><span>Capital: </span>{details?.capital}</p>
+                        </div>
 
-            {
-                // If a country has borders with another country...
-                details?.borders && 
+                        <div className="info-2">
+                            <p><span>Top Level Domain: </span>{details?.topLevelDomain}</p>
+                            <p><span>Currencies: </span>{
+                                details?.currencies.map(item => {
+                                    return item.name
+                                }).join(', ')
+                            }</p>
+                            <p><span>Languages: </span>{
+                                details?.languages.map(item => {
+                                    return item.name
+                                }).join(', ')
+                            }</p>
+                        </div>
+                    </div>
 
-                // ...then render this
-                <div className="borders">
-                    <p><span>Border Countries: </span></p>
-                    <div className="btns">
+                    <div className="info-3">
                         {
-                            details?.borders.map(country => {
-                                return <Link to={country} key={country}>
-                                    <button className="btn-borders">{ country }</button>
-                                </Link>
-                            })
+                            // If a country has borders with another country...
+                            details?.borders &&
+
+                            // ...then render this
+                            <div className="borders">
+                                <p><span>Border Countries: </span></p>
+                                <div className="btns">
+                                    {
+                                        details?.borders.map(country => {
+                                            return <Link to={country} key={country}>
+                                                <button className="btn-borders">{country}</button>
+                                            </Link>
+                                        })
+                                    }
+                                </div>
+                            </div>
                         }
                     </div>
                 </div>
-            }
-
-            
+            </div>
         </div>
     )
 }
