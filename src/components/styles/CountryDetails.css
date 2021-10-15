@@ -23,29 +23,6 @@
   margin: 0 15px 0 0;
 }
 
-.countryDetails .btn-borders {
-  margin: 5px 5px;
-  width: auto;
-  padding: 0 10px;
-}
-
-.countryDetails p {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.countryDetails p span {
-  font-weight: 600;
-}
-
-.countryDetails .borders .btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 .countryDetails .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,6 +31,10 @@
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
 }
 
 .countryDetails .main-container .flag-container {
@@ -78,13 +59,40 @@
           flex-direction: column;
 }
 
+.countryDetails .main-container .info-container p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.countryDetails .main-container .info-container p span {
+  font-weight: 600;
+}
+
 .countryDetails .main-container .info-container .h1-name {
   font-size: 22px;
 }
 
 .countryDetails .main-container .info-container .info-1,
 .countryDetails .main-container .info-container .info-2 {
-  margin: 40px 0;
+  margin: 30px 0;
+}
+
+.countryDetails .main-container .info-container .info-1 {
+  padding: 0 50px 0 0;
+}
+
+.countryDetails .main-container .info-container .info-3 .btn-borders {
+  margin: 5px 5px;
+  width: auto;
+  padding: 0 10px;
+}
+
+.countryDetails .main-container .info-container .info-3 .borders .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .countryDetails .main-container .info-container .second-line {
@@ -97,6 +105,5 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 100px;
 }
 /*# sourceMappingURL=CountryDetails.css.map */
