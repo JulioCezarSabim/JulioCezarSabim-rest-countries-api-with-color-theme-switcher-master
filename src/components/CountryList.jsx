@@ -9,6 +9,7 @@ import './styles/CountryList.css'
 const CountryList = props => {
 
     let [countries, setCountries] = useState()
+    let [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
         api
@@ -17,9 +18,14 @@ const CountryList = props => {
             .catch(error => console.log(error))
     }, [])
 
+    const filteredCountries = countries?.filter(country => {
+        return country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+
     return (
         <div className="countryList">
-            {countries?.map(item => (
+            <input type="search" onChange={e => setSearchTerm(e.target.value)} />
+            {filteredCountries?.map(item => (
                 <Link to={item.alpha3Code} key={uuidv4()} className="link" >
                     <Country data={item} />
                 </Link>
