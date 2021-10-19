@@ -8,18 +8,18 @@ import './styles/CountryList.css'
 
 const CountryList = props => {
 
-    let [country, setCountry] = useState()
+    let [countries, setCountries] = useState()
 
     useEffect(() => {
         api
             .get('/all')
-            .then(response => setCountry(response.data))
+            .then(response => setCountries(response.data))
             .catch(error => console.log(error))
     }, [])
 
     return (
         <div className="countryList">
-            {country?.map(item => (
+            {countries?.map(item => (
                 <Link to={item.alpha3Code} key={uuidv4()} className="link" >
                     <Country data={item} />
                 </Link>
