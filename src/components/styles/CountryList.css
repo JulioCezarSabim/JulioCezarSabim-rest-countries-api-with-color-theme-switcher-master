@@ -11,11 +11,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 50px 80px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 70px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 50px;
 }
 
 .countryList .link {
