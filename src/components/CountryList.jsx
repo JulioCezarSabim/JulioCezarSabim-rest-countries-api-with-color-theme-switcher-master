@@ -24,7 +24,7 @@ const CountryList = props => {
 
     return (
         <div className="countryList">
-            <input type="search" onChange={e => setSearchTerm(e.target.value)} />
+            
             {filteredCountries?.map(item => (
                 <Link to={item.alpha3Code} key={uuidv4()} className="link" >
                     <Country data={item} />

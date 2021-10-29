@@ -7,8 +7,9 @@
 .countryList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 50px;
+    padding: 50px;
 
     .link {
         text-decoration: none;
