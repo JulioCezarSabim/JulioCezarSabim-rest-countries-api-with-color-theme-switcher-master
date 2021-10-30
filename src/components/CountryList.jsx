@@ -5,11 +5,12 @@ import Country from './Country'
 import api from '../services/api'
 import { v4 as uuidv4 } from 'uuid';
 import './styles/CountryList.css'
+import FilterBar from './FilterBar';
 
 const CountryList = props => {
 
-    let [countries, setCountries] = useState()
-    let [searchTerm, setSearchTerm] = useState('')
+    const [countries, setCountries] = useState()
+    const [filteredCountries, setFilteredCountries] = useState()
 
     useEffect(() => {
         api
@@ -18,9 +19,16 @@ const CountryList = props => {
             .catch(error => console.log(error))
     }, [])
 
-    const filteredCountries = countries?.filter(country => {
-        return country.name.toLowerCase().includes(searchTerm.toLowerCase())
-    })
+    // const filteredCountries = countries?.filter(country => {
+    //     return country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    // })
+
+    function filterFunction(filter){
+        const filtered = countries?.filter(country => {
+            return country.name.toLowerCase().includes(filter.toLowerCase())
+        })
+        setFilteredCountries(filtered)
+    }
 
     // const getBorderCountriesFullName = (country) => {
     //     let bordersList = [];
@@ -39,10 +47,13 @@ const CountryList = props => {
     //     return country;
     // };
 
+    const listCountries = filteredCountries ? filteredCountries : countries
+
     return (
         <div className="countryList">
-            <input type="search" onChange={e => setSearchTerm(e.target.value)} />
-            {filteredCountries?.map(item => {
+            <FilterBar filter_function={filterFunction}/>
+
+            {listCountries?.map(item => {
                 // item = getBorderCountriesFullName(item);
                 return (<Link to={item.alpha3Code} key={uuidv4()} className="link" >
                     <Country data={item} />
