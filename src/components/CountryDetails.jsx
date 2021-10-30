@@ -8,11 +8,34 @@ import './styles/CountryDetails.css'
 const CountryDetails = ({ match }) => {
     let [details, setDetails] = useState()
 
-    useEffect(() => {
-        api
-            .get(`/alpha/${match.params.id}`)
-            .then(response => setDetails(response.data))
-            .catch(error => console.log(error))
+
+    const getBorderCountriesFullName = async (country) => {
+
+        const ret = await api.get('/all')
+        const countries = ret.data
+
+        let bordersList = [];
+
+        country.borders?.forEach((i) => {
+            bordersList.push({
+                code: i,
+                name: countries.find((c) => c.alpha3Code === i).name,
+            })
+        });
+
+        country.bordersList = bordersList
+
+        return country;
+    };
+
+
+    useEffect(async () => {
+        
+        const country_info = await api.get(`/alpha/${match.params.id}`)
+        const new_details = await getBorderCountriesFullName(country_info.data)
+        console.log(new_details)
+        setDetails(new_details)
+
     }, [match.params.id])
 
     return (
@@ -59,16 +82,16 @@ const CountryDetails = ({ match }) => {
                     <div className="info-3">
                         {
                             // If a country has borders with another country...
-                            details?.borders &&
+                            details?.bordersList &&
 
                             // ...then render this
                             <div className="borders">
                                 <p><span>Border Countries: </span></p>
                                 <div className="btns">
                                     {
-                                        details?.borders.map(country => {
-                                            return <Link to={country} key={country}>
-                                                <button className="btn-borders">{country}</button>
+                                        details?.bordersList.map(country => {
+                                            return <Link to={country.code} key={country.code}>
+                                                <button className="btn-borders">{country.name}</button>
                                             </Link>
                                         })
                                     }
