@@ -7,13 +7,21 @@ import './styles/CountryDetails.css'
 
 const CountryDetails = ({ match }) => {
     let [details, setDetails] = useState()
+    const [bordersFullNames, setBordersFullNames] = useState()
 
     useEffect(() => {
         api
             .get(`/alpha/${match.params.id}`)
             .then(response => setDetails(response.data))
             .catch(error => console.log(error))
-    }, [match.params.id])
+    }, [])
+
+    useEffect(() => {
+        details &&
+        api
+            .get(`alpha?codes=${details?.borders.join(',')}`)
+            .then(response => setBordersFullNames(response.data))
+    }, [details?.borders])
 
     return (
         <div className="countryDetails">
@@ -66,9 +74,9 @@ const CountryDetails = ({ match }) => {
                                 <p><span>Border Countries: </span></p>
                                 <div className="btns">
                                     {
-                                        details?.borders.map(country => {
-                                            return <Link to={country} key={country}>
-                                                <button className="btn-borders">{country}</button>
+                                        bordersFullNames?.map(country => {
+                                            return <Link to={country.alpha3Code} key={country.alpha3Code}>
+                                                <button className="btn-borders">{country.name}</button>
                                             </Link>
                                         })
                                     }
