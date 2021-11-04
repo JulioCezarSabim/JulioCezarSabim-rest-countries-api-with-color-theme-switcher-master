@@ -14,7 +14,7 @@ const CountryDetails = ({ match }) => {
             .get(`/alpha/${match.params.id}`)
             .then(response => setDetails(response.data))
             .catch(error => console.log(error))
-    }, [])
+    }, [match.params.id])
 
     useEffect(() => {
         details &&
