@@ -51,11 +51,20 @@ const CountryDetails = ({ match }) => {
 
                         <div className="info-2">
                             <p><span>Top Level Domain: </span>{details?.topLevelDomain}</p>
-                            <p><span>Currencies: </span>{
-                                details?.currencies.map(item => {
-                                    return item.name
-                                }).join(', ')
-                            }</p>
+
+                            { 
+                                // If the Country has currencies ...
+                                details?.currencies &&
+
+                                // ...render this
+                                <p><span>Currencies: </span>{
+                                    details?.currencies.map(item => {
+                                        return item.name
+                                    }).join(', ')
+                                }</p>
+                            }
+
+
                             <p><span>Languages: </span>{
                                 details?.languages.map(item => {
                                     return item.name
