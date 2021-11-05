@@ -1,7 +1,13 @@
 import React from 'react'
 
+import SearchBar from './SearchBar'
+
+import './styles/FiltersBar.css'
+
 export default function FiltersBar({ filterFunction }) {
     return (
-        <input type="search" onChange={e => filterFunction(e.target.value)} />
+        <div className="filters_bar">
+            <SearchBar filterFunction={filterFunction} />
+        </div>
     )
 }

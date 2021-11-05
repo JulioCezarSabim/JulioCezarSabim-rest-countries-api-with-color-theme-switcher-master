@@ -19,7 +19,7 @@ const CountryList = props => {
             .catch(error => console.log(error))
     }, [])
 
-    function filterFunction(filter){
+    function filterFunction(filter) {
         const filtered = countries?.filter(country => {
             return country.name.toLowerCase().includes(filter.toLowerCase())
         })
@@ -29,14 +29,16 @@ const CountryList = props => {
     const listCountries = filteredCountries ? filteredCountries : countries
 
     return (
-        <div className="countryList">
+        <>
             <FiltersBar filterFunction={filterFunction} />
-            {listCountries?.map(item => (
-                <Link to={item.alpha3Code} key={uuidv4()} className="link" >
-                    <Country data={item} />
-                </Link>
-            ))}
-        </div>
+            <div className="countryList">
+                {listCountries?.map(item => (
+                    <Link to={item.alpha3Code} key={uuidv4()} className="link" >
+                        <Country data={item} />
+                    </Link>
+                ))}
+            </div>
+        </>
     )
 }
 
