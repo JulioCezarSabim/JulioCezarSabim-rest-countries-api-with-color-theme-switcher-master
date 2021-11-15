@@ -11,13 +11,22 @@ const CountryList = props => {
 
     const [countries, setCountries] = useState()
     const [filteredCountries, setFilteredCountries] = useState()
+    const [region, setRegion] = useState('all')
 
     useEffect(() => {
-        api
-            .get('/all')
-            .then(response => setCountries(response.data))
-            .catch(error => console.log(error))
-    }, [])
+        if (region === 'all') {
+            api
+                .get('/all')
+                .then(response => setCountries(response.data))
+                .catch(error => console.log(error))
+        }
+        else {
+            api
+                .get(`/region/${region}`)
+                .then(response => setCountries(response.data))
+                .catch(error => console.log(error))
+        }
+    }, [region])
 
     function filterFunction(filter) {
         const filtered = countries?.filter(country => {
@@ -26,11 +35,15 @@ const CountryList = props => {
         setFilteredCountries(filtered)
     }
 
+    function selectedRegion(region) {
+        setRegion(region)
+    }
+
     const listCountries = filteredCountries ? filteredCountries : countries
 
     return (
         <>
-            <FiltersBar filterFunction={filterFunction} />
+            <FiltersBar filterFunction={filterFunction} selectedRegion={selectedRegion} />
             <div className="countryList">
                 {listCountries?.map(item => (
                     <Link to={item.alpha3Code} key={uuidv4()} className="link" >
