@@ -1,6 +1,12 @@
 .filters_bar {
   width: 100%;
   padding: 40px 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .filters_bar .search_bar {
