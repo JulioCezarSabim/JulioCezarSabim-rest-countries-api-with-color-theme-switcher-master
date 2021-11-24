@@ -1,11 +1,20 @@
+import React, { useEffect, useState } from 'react'
+
 import './styles/Navbar.css'
 
 const Navbar = props => {
+    const [darkmode, setDarkmode] = useState('light')
+
+    function toggleDarkmode() {
+        if (darkmode === 'light') setDarkmode('dark')
+        else setDarkmode('light')
+    }
+
     return (
         <nav>
             <ul>
                 <li>Where in the world?</li>
-                <li><button><i className="far fa-moon"></i> Dark Mode</button></li>
+                <li><button className="btn-darkmode" onClick={toggleDarkmode}><i className="far fa-moon"></i> Dark Mode</button></li>
             </ul>
         </nav>
     )
