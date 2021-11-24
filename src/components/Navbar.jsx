@@ -5,6 +5,12 @@ import './styles/Navbar.css'
 const Navbar = props => {
     const [darkmode, setDarkmode] = useState('light')
 
+    useEffect(() => {
+        const main_style = document.getElementById('main')
+
+        main_style.classList.toggle('dark')
+    }, [darkmode])
+
     function toggleDarkmode() {
         if (darkmode === 'light') setDarkmode('dark')
         else setDarkmode('light')
