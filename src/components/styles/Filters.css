@@ -2,6 +2,8 @@
   position: relative;
   width: 200px;
   height: 57px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .custom-select select {
