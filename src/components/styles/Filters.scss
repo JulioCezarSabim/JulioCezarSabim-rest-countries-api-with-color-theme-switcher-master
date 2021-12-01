@@ -29,3 +29,23 @@
         pointer-events: none;
     } // i
 } // custom-select
+
+.dark {
+    .custom-select {
+        background-color: #2b3743;
+        color: white;
+
+        select {
+            background-color: inherit;
+            color: inherit;
+
+            option {
+                background-color: inherit;
+            } // option
+        } // select
+    
+        i {
+            background-color: inherit;
+        } // i
+    } // custom-select
+} // .dark

@@ -20,6 +20,14 @@
 
 .countryList .link {
   text-decoration: none;
-  color: black;
+  color: inherit;
+}
+
+.dark .countryList {
+  background-color: #202d36;
+}
+
+.dark .countryList .link {
+  background-color: #2b3743;
 }
 /*# sourceMappingURL=CountryList.css.map */

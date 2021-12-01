@@ -12,8 +12,7 @@ const Navbar = props => {
     }, [darkmode])
 
     function toggleDarkmode() {
-        if (darkmode === 'light') setDarkmode('dark')
-        else setDarkmode('light')
+        darkmode === 'light' ? setDarkmode('dark') : setDarkmode('light')
     }
 
     return (

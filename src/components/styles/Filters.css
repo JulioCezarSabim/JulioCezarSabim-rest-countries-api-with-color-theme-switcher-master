@@ -31,4 +31,22 @@
   right: 0;
   pointer-events: none;
 }
+
+.dark .custom-select {
+  background-color: #2b3743;
+  color: white;
+}
+
+.dark .custom-select select {
+  background-color: inherit;
+  color: inherit;
+}
+
+.dark .custom-select select option {
+  background-color: inherit;
+}
+
+.dark .custom-select i {
+  background-color: inherit;
+}
 /*# sourceMappingURL=Filters.css.map */

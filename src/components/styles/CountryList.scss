@@ -13,6 +13,16 @@
 
     .link {
         text-decoration: none;
-        color: black;
+        color: inherit;
     } // .link
 } // countryList
+
+.dark {
+    .countryList {
+        background-color: #202d36;
+    
+        .link {
+            background-color: #2b3743;
+        } // .link
+    } // countryList
+}
