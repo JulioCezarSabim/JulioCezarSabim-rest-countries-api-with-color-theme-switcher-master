@@ -9,7 +9,6 @@
     .btn-borders {
         width: 110px;
         height: 40px;
-        background-color: white;
         border: none;
         font-size: 14px;
         border-radius: 3px;
@@ -86,3 +85,14 @@
         } // .info-container
     } // .main-container
 } // .countryDetails
+
+.dark {
+    .countryDetails {
+        background-color: #202d36;
+
+        button {
+            background-color: #2b3743;
+            color: white;
+        } // button
+    } // .countryDetails
+} // .dark

@@ -7,8 +7,10 @@ const Navbar = props => {
 
     useEffect(() => {
         const main_style = document.getElementById('main')
+        const body = document.getElementsByTagName('body')[0]
 
         main_style.classList.toggle('dark')
+        body.classList.toggle('dark')
     }, [darkmode])
 
     function toggleDarkmode() {

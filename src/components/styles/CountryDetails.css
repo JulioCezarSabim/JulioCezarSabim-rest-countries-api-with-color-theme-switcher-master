@@ -10,7 +10,6 @@
 .countryDetails .btn-borders {
   width: 110px;
   height: 40px;
-  background-color: white;
   border: none;
   font-size: 14px;
   border-radius: 3px;
@@ -105,5 +104,14 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.dark .countryDetails {
+  background-color: #202d36;
+}
+
+.dark .countryDetails button {
+  background-color: #2b3743;
+  color: white;
 }
 /*# sourceMappingURL=CountryDetails.css.map */
