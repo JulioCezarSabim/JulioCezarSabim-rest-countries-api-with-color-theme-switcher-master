@@ -39,12 +39,14 @@ nav ul li {
   font-size: 24px;
 }
 
-nav ul li .btn-darkmode {
+nav ul li .btn-darkmode,
+nav ul li i {
   border: none;
   font-weight: 400;
   font-size: 16px;
   background-color: inherit;
   color: inherit;
+  margin-right: 5px;
 }
 
 @media (max-width: 600px) {
