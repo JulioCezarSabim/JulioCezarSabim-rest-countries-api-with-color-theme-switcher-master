@@ -31,4 +31,18 @@
   background-color: #2b3743;
   color: white;
 }
+
+@media (max-width: 730px) {
+  .filters_bar {
+    padding: 0 25px;
+  }
+  .filters_bar .search_bar {
+    width: 100vw;
+    min-width: 100px;
+  }
+  .filters_bar .custom-select,
+  .filters_bar .search_bar {
+    margin: 20px 0;
+  }
+}
 /*# sourceMappingURL=FiltersBar.css.map */

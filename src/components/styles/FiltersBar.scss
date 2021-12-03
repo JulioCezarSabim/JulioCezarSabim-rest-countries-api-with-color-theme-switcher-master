@@ -27,3 +27,19 @@
         } // .search_bar
     } // .filters_bar
 } // .dark
+
+@media (max-width: 730px) {
+    .filters_bar {
+        padding: 0 25px;
+
+        .search_bar {
+            width: 100vw;
+            min-width: 100px;
+        } // .search_bar
+
+        .custom-select,
+        .search_bar {
+            margin: 20px 0;
+        } // .custom-select
+    } // .filters_bar
+}
