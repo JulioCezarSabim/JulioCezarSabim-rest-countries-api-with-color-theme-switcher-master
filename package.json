@@ -44,6 +44,8 @@
     "uuid": "^8.3.2"
   },
   "resolutions": {
-    "immer": "9.0.6"
+    "immer": ">=9.0.6",
+    "glob-parent": ">=5.1.2",
+    "ansi-html": "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41"
   }
 }
